@@ -10,10 +10,9 @@ print(days_of_week)
 Lista_zakupów = {'piekarnia': ['chleb', 'bułki', 'pączek'], 'warzywniak': ['marchew', 'seler', 'rukola']}
 counter = 0
 print('Lista zakupów')
-for shop in Lista_zakupów:
-    print('Idę do %s, kupuję tu następujące rzeczy: %s' % (shop, Lista_zakupów[shop]))
-    for food_item in Lista_zakupów[shop]:
-        counter = counter + Lista_zakupów[shop].count(food_item)
+for shop,products in Lista_zakupów.items():
+    print('Idę do %s, kupuję tu następujące rzeczy: %s.' %(shop.upper(), ", ".join(products).upper()))
+   counter +=len(products)
 print('W sumię kupuję %d produktów.' % counter)
 
 start_num = 1
